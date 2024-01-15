@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import generateId from "../../helpers/generateId";
 const initialState = [
   {
     id: 1,
@@ -17,20 +18,47 @@ const initialState = [
   },
 ];
 const TodoListBasicTailWindCss = () => {
-  const [tasks, setsTaks] = useState(initialState);
+  const [tasks, setTasks] = useState(initialState);
   const [newTask, setNewTask] = useState("");
 
-  function handleChangeTask(e) {
-    e.preventDefault();
-    const value = e.target.value;
-    setNewTask(value);
+  // function handleChangeTask(e) {
+  //   e.preventDefault();
+  //   const value = e.target.value;
+  //   setNewTask(value);
+  // }
+
+  function handleAddTask() {
+    if (newTask.trim()) {
+      const newId = generateId();
+      const newTaskObject = {
+        id: newId,
+        title: newTask.trim(),
+        completed: false,
+      };
+
+      setTasks([...tasks, newTaskObject]);
+
+      setNewTask("");
+    }
   }
 
-  function handleAddTask() {}
+  function handleRemoveTask(taskID) {
+    const updateTasks = tasks.filter((task) => task.id !== taskID);
+    setTasks(updateTasks);
+  }
 
-  function handleRemoveTask() {}
+  function handleCompletion(taskID) {
+    const updateTasks = tasks.map((task) =>
+      task.id === taskID ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updateTasks);
+  }
 
-  function handleCompletion() {}
+  const handlekeyEnter = (e) => {
+    if (e.key === "Enter") {
+      handleAddTask();
+    }
+  };
 
   return (
     <>
@@ -45,7 +73,8 @@ const TodoListBasicTailWindCss = () => {
         "
             value={newTask}
             // onChange={handleChangeTask}
-            onChange={(e)=>setNewTask(e.target.value)}
+            onChange={(e) => setNewTask(e.target.value)}
+            onKeyDown={handlekeyEnter}
           />
           <button
             className="bg-blue-500

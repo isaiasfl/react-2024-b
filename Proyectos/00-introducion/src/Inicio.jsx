@@ -1,16 +1,19 @@
 import "./Inicio.css";
-import Contador from "./components/Contador";
-import ContadorDoble from "./components/ContadorDoble";
-import ContadorDobleBest from "./components/ContadorDobleBest";
-import DarkLightMode from "./components/DarkLightMode";
-import RegistrarFormulario from "./components/RegistrarFormulario";
-import TodoListBasicTailWindCss from "./components/TodoListBasicTailWindCss";
-import TodoListVeryBasic from "./components/TodoListVeryBasic";
+import ComponenteProps from "./components/props/ComponenteProps";
+import PadreHijoNieto from "./components/props/PadreHijoNieto";
+import ResizeListener from "./components/useEffect/ResizeListener";
+import UseEffectBasic from "./components/useEffect/UseEffectBasic";
+import Contador from "./components/useState/Contador";
+import ContadorDoble from "./components/useState/ContadorDoble";
+import ContadorDobleBest from "./components/useState/ContadorDobleBest";
+import DarkLightMode from "./components/useState/DarkLightMode";
+import TodoListBasicTailWindCss from "./components/useState/TodoListBasicTailWindCss";
+import TodoListVeryBasic from "./components/useState/TodoListVeryBasic";
 
 const Inicio = () => {
   return (
     <>
-      <Contador />
+      {/* <Contador />
       <hr />
       <ContadorDoble />
       <hr />
@@ -18,10 +21,16 @@ const Inicio = () => {
       <hr />
       <DarkLightMode />
       <hr />
-      <TodoListVeryBasic />
+      <TodoListVeryBasic /> */}
       {/* <RegistrarFormulario /> */}
+      {/* <hr />
+      <TodoListBasicTailWindCss /> */}
       <hr />
-      <TodoListBasicTailWindCss />
+      {/* <ComponenteProps /> */}
+      <hr />
+      {/* <PadreHijoNieto /> */}
+      {/* <UseEffectBasic /> */}
+      <ResizeListener />
     </>
   );
 };
