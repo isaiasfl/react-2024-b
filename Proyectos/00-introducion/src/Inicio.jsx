@@ -1,6 +1,7 @@
 import "./Inicio.css";
 import ComponenteProps from "./components/props/ComponenteProps";
 import PadreHijoNieto from "./components/props/PadreHijoNieto";
+import GitHubUserCard from "./components/useEffect/GitHubUserCard/GitHubUserCard";
 import ResizeListener from "./components/useEffect/ResizeListener";
 import UseEffectBasic from "./components/useEffect/UseEffectBasic";
 import Contador from "./components/useState/Contador";
@@ -30,7 +31,8 @@ const Inicio = () => {
       <hr />
       {/* <PadreHijoNieto /> */}
       {/* <UseEffectBasic /> */}
-      <ResizeListener />
+      {/* <ResizeListener /> */}
+      <GitHubUserCard />
     </>
   );
 };
