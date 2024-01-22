@@ -1,8 +1,7 @@
-import PokeApi from "./components/PokeApi";
 function App() {
   return (
     <>
-      <PokeApi />
+      <h1 className="text-5xl">Estoy en APP</h1>
     </>
   );
 }
