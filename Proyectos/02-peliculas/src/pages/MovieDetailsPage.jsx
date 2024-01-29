@@ -1,6 +1,15 @@
+import { useParams } from "react-router-dom";
+import BackButton from "../components/BackButton";
+import MovieDetails from "../components/MovieDetails";
 
 const MovieDetailsPage = () => {
-  return <div>MovieDetailsPage</div>;
+  const { idPelicula } = useParams();
+  return (
+    <div>
+      <BackButton />
+      <MovieDetails movieId={idPelicula} />
+    </div>
+  );
 };
 
 export default MovieDetailsPage;
