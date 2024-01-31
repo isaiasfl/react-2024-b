@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const RootMoviesLayout = () => {
   return (
     <>
-      <div>aquí coloco el NAV</div>
+      <Header />
       <Outlet />
-      <div>aquí Footer</div>
+      <Footer />
     </>
   );
 };

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import MovieSearchForm from "../components/MovieSearchForm";
 
 const Home = () => {

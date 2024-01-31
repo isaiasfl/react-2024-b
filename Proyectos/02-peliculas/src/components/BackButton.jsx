@@ -6,12 +6,14 @@ const BackButton = () => {
     navigate(-1);
   }
   return (
-    <button
-      className="bg-gray-800 text-white py-2 px-4"
-      onClick={handleClickBack}
-    >
-      Volver
-    </button>
+    <div className="bg-gray-800 ">
+      <button
+        className="bg-gray-800 text-white py-2 px-5 hover:bg-gray-600 "
+        onClick={handleClickBack}
+      >
+        Volver
+      </button>
+    </div>
   );
 };
 
