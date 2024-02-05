@@ -4,6 +4,7 @@ import reactLogo from "./assets/react.svg";
 import EjemploUseRef from "./components/EjemploUseRef";
 import EjemploUseRef2 from "./components/EjemploUseRef2";
 import EjemploUseRef3 from "./components/EjemploUseRef3";
+import AppContext from "./components/ejemploContext/AppContext";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
       <h2>Uso de useRef</h2>
       <EjemploUseRef />
       <EjemploUseRef2 />
-      <EjemploUseRef3 />
+      {/* <EjemploUseRef3 /> */}
+      <hr />
+      <AppContext />
     </>
   );
 }
