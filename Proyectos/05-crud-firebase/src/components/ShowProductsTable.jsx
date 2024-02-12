@@ -19,7 +19,7 @@ const ShowProductsTable = ({ updateProductos }) => {
         cancelButtonColor: "#d33",
         confirmButtonText: "Si",
       });
-      
+
       if (response.isConfirmed) {
         await deleteProducto(id);
         updateProductos();
@@ -80,7 +80,7 @@ const ShowProductsTable = ({ updateProductos }) => {
                     />
                   </td>
                   <td className="flex justify-between gap-2 py-2 px-4 ">
-                    <Link>
+                    <Link to={`/productos/${producto.id}`}>
                       <button className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-1 px-2 rounded focus:outline-none hover:shadow hover:shadow-slate-500">
                         Editar
                       </button>
