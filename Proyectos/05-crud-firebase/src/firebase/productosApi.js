@@ -4,6 +4,7 @@ import {
   getAuth,
   setPersistence,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import {
   addDoc,
@@ -97,12 +98,26 @@ export const signInWithGoogle = async (signInFirebase, setError, navigate) => {
     // a nivel de session :
     await setPersistence(auth, browserSessionPersistence);
     const result = await signInWithPopup(auth, provider);
-    const user = result.user;
+    console.log("result--->", result);
+    const user = result._tokenResponse;
     // setear mi estado con el usuario
-    // signInFirebase(user);
-    console.log(user);
+    signInFirebase(user);
+    console.log("usuario: -->", user);
     navigate("/");
   } catch (error) {
     setError("Error al iniciar sesión con Google");
+  }
+};
+
+// ------------ Cerrar sesión en Google ------------
+
+export const cerrarSesion = async () => {
+  const auth = getAuth();
+  try {
+    await signOut(auth);
+    return true;
+  } catch (error) {
+    console.log("Error al iniciar sesión con Google", error);
+    return false;
   }
 };

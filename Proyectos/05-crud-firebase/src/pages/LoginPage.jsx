@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../firebase/productosApi";
+import { useAuthContext } from "../context/useAuthContext";
+
 
 const LoginPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const {signInFirebase} =useAuthContext()
   // estado global
 
   const handleSignIn = async (e) => {
     e.preventDefault();
     // llamar a una función de productosApi para gestionar el inicio de sesión con google.
-    await signInWithGoogle("signInFirebase", setError, navigate);
+    await signInWithGoogle(signInFirebase, setError, navigate);
   };
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-gray-200 to-gray-500">

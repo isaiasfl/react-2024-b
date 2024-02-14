@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/utils/ProtectedRoute";
+import { AuthProvider } from "./context/useAuthContext";
 import EditProductPage from "./pages/EditProductPage";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
@@ -14,7 +15,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         {
-          element: <ProtectedRoute isActive={false} redirectPath="/login" />,
+          element: <ProtectedRoute redirectPath="/login" />,
           children: [
             { index: true, element: <HomePage /> },
             {
@@ -35,9 +36,10 @@ function App() {
     },
   ]);
   return (
-  <AuthProvider>
-    <RouterProvider router={router} />);
-  </AuthProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;
