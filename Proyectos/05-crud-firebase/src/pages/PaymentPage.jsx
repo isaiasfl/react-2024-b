@@ -1,9 +1,10 @@
-import React from 'react'
+import { useLocation } from "react-router-dom";
 
 const PaymentPage = () => {
-  return (
-    <div>PaymentPage</div>
-  )
-}
+  const location = useLocation();
+  const { state } = location;
 
-export default PaymentPage
+  return <div>PaymentPage {state.stock}</div>;
+};
+
+export default PaymentPage;

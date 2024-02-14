@@ -23,7 +23,7 @@ function App() {
               element: <EditProductPage />,
             },
             {
-              path: "/payment",
+              path: "/payment/",
               element: <PaymentPage />,
             },
           ],
